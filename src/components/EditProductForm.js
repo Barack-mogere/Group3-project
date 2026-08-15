@@ -61,3 +61,100 @@ function EditProductForm({ watch,onSave }) {
         setError(error.message);
       }
     }
+
+    return (
+        <form className="product-form" onSubmit={handleSubmit}>
+            <h2>Edit Watch</h2>
+
+            {error && <p className="form-error">{error}</p>}
+
+            <div className="form-group">
+                <label htmlFor="edit-name">Watch Name:</label>
+                <input
+                    type="text"
+                    id="edit-name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-brand">Brand:</label>
+                <input
+                    type="text"
+                    id="edit-brand"
+                    name="brand"
+                    value={formData.brand}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-description">Description:</label>
+                <textarea
+                    type="text"
+                    id="edit-description"
+                    name="description"
+                    value={formData.description}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-origin">Origin:</label>
+                <textarea
+                    id="edit-origin"
+                    type="text"
+                    name="origin"
+                    value={formData.origin}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-price">Price:</label>
+                <input
+                    type="number"
+                    id="edit-price"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleChange}
+                    min="0"
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-image">Image URL:</label>
+                <input
+                    type="url"
+                    id="edit-image"
+                    name="image"
+                    value={formData.image}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="edit-image">Image URL:</label>
+                <input
+                    type="text"
+                    id="edit-image"
+                    name="image"
+                    value={formData.image}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <button type="submit" className="submit-button">
+              Save Changes
+            </button>
+
+            <button type="button" className="cancel-button" onClick={onCancel}>
+              Cancel
+            </button>
+        </form>
+    );
+}
+
+export default EditProductForm;

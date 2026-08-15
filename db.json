@@ -1,7 +1,7 @@
 {
   "store_info": [
     {
-      "id": 1,
+      "id": "1",
       "name": "ChronoVault",
       "description": "Premium watches for every occasion",
       "phone_number": "0712-345-678"
@@ -9,7 +9,7 @@
   ],
   "watches": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Seiko 5 Sports",
       "description": "Automatic sports watch with a classic stainless steel design.",
       "brand": "Seiko",
@@ -19,7 +19,7 @@
       "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Casio G-Shock",
       "description": "A durable digital watch designed for an active lifestyle.",
       "brand": "Casio",
@@ -29,7 +29,7 @@
       "image": "https://images.unsplash.com/photo-1523170335258-f5ed11844a49"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Tissot PRX",
       "description": "A stylish Swiss watch combining a modern look with a classic integrated bracelet.",
       "brand": "Tissot",
@@ -39,7 +39,7 @@
       "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Citizen Eco-Drive",
       "description": "A sophisticated solar-powered watch with a clean and elegant design.",
       "brand": "Citizen",
@@ -49,7 +49,7 @@
       "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Orient Bambino",
       "description": "A classic automatic dress watch with an elegant leather strap.",
       "brand": "Orient",
@@ -59,7 +59,7 @@
       "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Fossil Grant",
       "description": "A stylish chronograph watch suitable for both casual and formal outfits.",
       "brand": "Fossil",
@@ -69,7 +69,7 @@
       "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Citizen Tsuyosa",
       "description": "A modern automatic watch featuring a bold dial and integrated bracelet.",
       "brand": "Citizen",
@@ -79,7 +79,7 @@
       "image": "https://images.unsplash.com/photo-1508057198894-247b23fe5ade"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Hamilton Khaki Field",
       "description": "A rugged field watch inspired by classic military timepieces.",
       "brand": "Hamilton",
@@ -87,6 +87,16 @@
       "origin": "Switzerland",
       "price": 115000,
       "image": "https://images.unsplash.com/photo-1495857000853-fe46c8aefc30"
+    },
+    {
+      "name": "Casio Edifice",
+      "brand": "Casio",
+      "description": "A stylish chronograph watch designed for everyday wear.",
+      "origin": "japan",
+      "price": 22000,
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d",
+      "id": "Ap0GKKHRnPI"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

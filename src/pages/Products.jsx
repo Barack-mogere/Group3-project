@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getWatches } from "../services/api";
+import ProductList from "../components/ProductList";
 
 function Products() {
   const [watches, setWatches] = useState([]);
@@ -36,6 +37,7 @@ function Products() {
       <p>Browse our collection of premium watches.</p>
 
       <p>We have {watches.length} watches available.</p>
+      <ProductList watches={watches} />
     </main>
   );
 }

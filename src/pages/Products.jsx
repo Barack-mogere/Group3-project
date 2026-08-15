@@ -1,29 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
 import Loading from "../components/Loading";
-import { getWatches } from "../services/api";
+import useWatches from "../hooks/useWatches";
 
 function Products() {
-  const [watches, setWatches] = useState([]);
+  const { watches, loading, error } = useWatches();
+
   const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    async function fetchWatches() {
-      try {
-        const data = await getWatches();
-        setWatches(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchWatches();
-  }, []);
 
   const filteredWatches = watches.filter((watch) => {
     const search = searchTerm.toLowerCase();

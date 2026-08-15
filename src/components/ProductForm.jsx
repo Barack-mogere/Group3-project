@@ -20,13 +20,13 @@ function ProductForm({ onAddWatch }) {
   const [error, setError] = useState("");
 
   function handleChange(event) {
-    const { name, value } = event.target;
+  const { name, value } = event.target;
 
-    setFormData((previousData) => ({
-      ...previousData,
-      [name]: value,
-    }));
-  }
+  setFormData((previousData) => ({
+    ...previousData,
+    [name]: value,
+  }));
+}
 
   async function handleSubmit(event) {
     event.preventDefault();

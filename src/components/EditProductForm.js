@@ -9,3 +9,18 @@ function EditProductForm({ watch,onSave }) {
     price: "",
     image: "",
   });
+
+  const [error, setError] = useState({});
+
+  useEffect(() => {
+    if (watch) {
+      setFormData({
+        name: watch.name,
+        brand: watch.brand,
+        description: watch.description,
+        origin: watch.origin,
+        price: watch.price,
+        image: watch.image,
+      });
+    }
+  }, [watch]);

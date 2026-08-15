@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { getWatches } from "../services/api";
+import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
+import Loading from "../components/Loading";
+import { getWatches } from "../services/api";
 
 function Products() {
   const [watches, setWatches] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -22,22 +25,39 @@ function Products() {
     fetchWatches();
   }, []);
 
+  const filteredWatches = watches.filter((watch) => {
+    const search = searchTerm.toLowerCase();
+
+    return (
+      watch.name.toLowerCase().includes(search) ||
+      watch.brand.toLowerCase().includes(search) ||
+      watch.origin.toLowerCase().includes(search)
+    );
+  });
+
   if (loading) {
-    return <p>Loading watches...</p>;
+    return <Loading />;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="form-error">{error}</p>;
   }
 
   return (
-    <main>
+    <main className="products-page">
       <h1>Our Watches</h1>
 
-      <p>Browse our collection of premium watches.</p>
+      <p className="products-description">
+        Browse our collection of premium watches.
+      </p>
 
-      <p>We have {watches.length} watches available.</p>
-      <ProductList watches={watches} />
+      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
+      <p className="watch-count">
+        We have {filteredWatches.length} watches available
+      </p>
+
+      <ProductList watches={filteredWatches} />
     </main>
   );
 }

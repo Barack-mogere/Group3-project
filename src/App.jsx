@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import AddProduct from "./pages/AddProduct";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Route path="/watch/:id" element={<ProductDetails />} />
         <Route path="/admin" element={<AddProduct />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -18,8 +18,9 @@ function Footer() {
         <div className="footer-contact">
           <h3>Contact Us</h3>
           <p>Email: info@timeless.com</p>
-          <p>Phone: +1 (555) 123-4567</p>
+          <p>Phone: +254 700 000 000</p>
         </div>
+    </div>
     </footer>
   );
 }

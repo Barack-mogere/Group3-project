@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function EditProductForm({ watch, onSave }) {
+function EditProductForm({ watch, onSave, onCancel }) {
   const [formData, setFormData] = useState({
     name: "",
     brand: "",
@@ -10,7 +10,7 @@ function EditProductForm({ watch, onSave }) {
     image: "",
   });
 
-  const [error, setError] = useState({});
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (watch) {
@@ -27,6 +27,7 @@ function EditProductForm({ watch, onSave }) {
 
   function handleChange(event) {
     const { name, value } = event.target;
+
     setFormData((previousData) => ({
       ...previousData,
       [name]: value,
@@ -69,7 +70,7 @@ function EditProductForm({ watch, onSave }) {
       {error && <p className="form-error">{error}</p>}
 
       <div className="form-group">
-        <label htmlFor="edit-name">Watch Name:</label>
+        <label htmlFor="edit-name">Watch Name</label>
         <input
           type="text"
           id="edit-name"
@@ -80,7 +81,7 @@ function EditProductForm({ watch, onSave }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="edit-brand">Brand:</label>
+        <label htmlFor="edit-brand">Brand</label>
         <input
           type="text"
           id="edit-brand"
@@ -91,9 +92,8 @@ function EditProductForm({ watch, onSave }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="edit-description">Description:</label>
+        <label htmlFor="edit-description">Description</label>
         <textarea
-          type="text"
           id="edit-description"
           name="description"
           value={formData.description}
@@ -102,10 +102,9 @@ function EditProductForm({ watch, onSave }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="edit-origin">Origin:</label>
-        <textarea
+        <label htmlFor="edit-origin">Origin</label>
+        <input
           id="edit-origin"
-          type="text"
           name="origin"
           value={formData.origin}
           onChange={handleChange}
@@ -113,7 +112,7 @@ function EditProductForm({ watch, onSave }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="edit-price">Price:</label>
+        <label htmlFor="edit-price">Price</label>
         <input
           type="number"
           id="edit-price"
@@ -125,20 +124,9 @@ function EditProductForm({ watch, onSave }) {
       </div>
 
       <div className="form-group">
-        <label htmlFor="edit-image">Image URL:</label>
+        <label htmlFor="edit-image">Image URL</label>
         <input
           type="url"
-          id="edit-image"
-          name="image"
-          value={formData.image}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="edit-image">Image URL:</label>
-        <input
-          type="text"
           id="edit-image"
           name="image"
           value={formData.image}

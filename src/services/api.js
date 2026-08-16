@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "https://group3-project-fixed.onrender.com";
 
 export async function getWatches() {
   const response = await fetch(`${API_URL}/watches`);
